@@ -326,7 +326,7 @@ async function persistSave(save) {
 // MAIN COMPONENT
 // ============================================================
 
-export default function app() {
+export default function ChemCLEPQuest() {
   const [screen, setScreen] = useState('home');
   const [save, setSave] = useState(defaultSave);
   const [loaded, setLoaded] = useState(false);
@@ -1814,7 +1814,15 @@ const globalCSS = `
 
   * { box-sizing: border-box; }
 
-  html, body { -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+  html, body, #root {
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+    background: #08080d;
+    color: #f5f5f7;
+  }
+
+  /* Tell the browser this is a dark-themed app — prevents iOS Safari from auto-inverting */
+  html { color-scheme: dark; }
 
   .quest-card {
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
@@ -2404,6 +2412,7 @@ const styles = {
     fontWeight: 600,
     lineHeight: 1.5,
     letterSpacing: '-0.01em',
+    color: '#f5f5f7',
   },
   choicesGrid: {
     display: 'flex',
@@ -2419,7 +2428,7 @@ const styles = {
     background: 'rgba(255,255,255,0.02)',
     border: '1px solid rgba(255,255,255,0.1)',
     borderRadius: 4,
-    color: 'inherit',
+    color: '#f5f5f7',
     fontFamily: 'inherit',
     fontSize: 15,
     textAlign: 'left',
@@ -2448,7 +2457,7 @@ const styles = {
     color: 'rgba(255,255,255,0.4)',
     minWidth: 20,
   },
-  choiceText: { flex: 1 },
+  choiceText: { flex: 1, color: '#f5f5f7' },
   resultBox: {
     border: '1px solid',
     borderRadius: 4,
